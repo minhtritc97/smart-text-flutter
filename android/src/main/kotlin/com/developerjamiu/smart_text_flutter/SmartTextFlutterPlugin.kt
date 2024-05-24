@@ -5,7 +5,7 @@ import android.app.Activity
 import android.content.Context
 import android.os.Build
 import android.view.textclassifier.TextClassificationManager
-import io.flutter.embedding.android.FlutterActivity
+import io.flutter.embedding.android.FlutterFragmentActivity
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
@@ -53,7 +53,7 @@ class SmartTextFlutterPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
     }
 
     override fun onAttachedToActivity(binding: ActivityPluginBinding) {
-        activity = binding.activity as FlutterActivity
+        activity = binding.activity as FlutterFragmentActivity
         initClassificationManager()
     }
 
@@ -62,7 +62,7 @@ class SmartTextFlutterPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
     }
 
     override fun onReattachedToActivityForConfigChanges(binding: ActivityPluginBinding) {
-        activity = binding.activity as FlutterActivity
+        activity = binding.activity as FlutterFragmentActivity
         initClassificationManager()
     }
 
